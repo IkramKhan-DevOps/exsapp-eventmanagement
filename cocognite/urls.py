@@ -10,12 +10,10 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
 
     # PORTALS ---------------------------------------------------------- #
-    # path('', include('src.wsite.urls', namespace='wsite')),
+    path('', include('src.website.urls', namespace='website')),
     path('a/', include('src.portals.admins.urls', namespace='admins-portal')),
     path('c/', include('src.portals.customer.urls', namespace='customer-portal')),
 
-    # DEPRECATED ------------------------------------------------------- #
-    path('site/', include('src.wsite.urls', namespace='wsite')),
 
 ]
 

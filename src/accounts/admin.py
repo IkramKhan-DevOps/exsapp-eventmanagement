@@ -29,26 +29,11 @@ from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.debug import sensitive_post_parameters
 
 from .models import (
-    User, StudentProfile
+    User
 )
-
 
 csrf_protect_m = method_decorator(csrf_protect)
 sensitive_post_parameters_m = method_decorator(sensitive_post_parameters())
-
-
-class UserStatisticsAdmin(admin.ModelAdmin):
-    list_display = (
-        'pk', 'user', 'current_amount', 'withdrawn_amount', 'tasks_amount_total',
-        'referrals_amount_total', 'tasks_completed', 'referrals_completed'
-    )
-    search_fields = ['pk']
-
-
-class MobileAppAdmin(admin.ModelAdmin):
-    list_display = (
-        'name', 'file', 'is_active', 'uploaded_on', 'updated_on'
-    )
 
 
 class UserCustomAdmin(admin.ModelAdmin):
@@ -56,23 +41,23 @@ class UserCustomAdmin(admin.ModelAdmin):
     change_user_password_template = None
     fieldsets = (
         (None, {'fields': ('username', 'password')}),
-        ('Personal info', {'fields': ('profile_image', 'first_name', 'last_name', 'email', 'phone_number')}),
+        ('Personal info', {'fields': (
+            'profile_image', 'first_name', 'last_name', 'email', 'phone_number', 'gender', 'address', 'about')}),
         ('Access Level', {
-            'fields': ('is_active', 'is_staff', 'is_superuser', 'is_student', 'is_moderator', 'is_parent', 'is_completed'),
+            'fields': ('is_active', 'is_staff', 'is_superuser', 'is_customer'),
         }),
         ('Permissions', {'fields': ('groups', 'user_permissions')}),
         ('Important dates', {'fields': ('last_login', 'date_joined')}),
     )
     filter_horizontal = ('groups', 'user_permissions',)
     list_display = [
-        'username', 'email', 'is_active', 'is_staff', 'is_superuser',
-        'is_student', 'is_parent', 'is_moderator'
+        'username', 'email', 'is_active', 'is_staff', 'is_superuser', 'is_customer'
     ]
     search_fields = [
         'username', 'first_name', 'last_name',
     ]
     list_filter = [
-        'is_active', 'is_superuser', 'is_staff', 'is_student', 'is_moderator', 'is_parent'
+        'is_active', 'is_superuser', 'is_staff', 'is_customer'
     ]
     add_fieldsets = (
         (None, {
@@ -102,12 +87,12 @@ class UserCustomAdmin(admin.ModelAdmin):
 
     def get_urls(self):
         return [
-            path(
-                '<id>/password/',
-                self.admin_site.admin_view(self.user_change_password),
-                name='auth_user_password_change',
-            ),
-        ] + super().get_urls()
+                   path(
+                       '<id>/password/',
+                       self.admin_site.admin_view(self.user_change_password),
+                       name='auth_user_password_change',
+                   ),
+               ] + super().get_urls()
 
     def lookup_allowed(self, lookup, value):
         # Don't allow lookups involving passwords.
@@ -228,4 +213,7 @@ class UserCustomAdmin(admin.ModelAdmin):
 
 # CUSTOM USER
 admin.site.register(User, UserCustomAdmin)
-admin.site.register(StudentProfile)
+
+admin.site.site_header = "PROJECT | Root admin access"
+admin.site.site_title = "root access"
+admin.site.index_title = "PRO"

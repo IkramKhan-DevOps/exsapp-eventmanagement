@@ -1,16 +1,16 @@
-{% extends 'wsite/base.html' %}
+{% extends 'website/base.html' %}
 {% load static %}
 
 {% block base_content %}
     <!-- hero section start -->
     <section class="section hero-section bg-ico-hero" id="home">
-        <div class="bg-overlay" style="background-color: orangered;"></div>
+        <div class="bg-overlay bg-primary"></div>
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5">
                     <div class="text-white-50">
                         <h1 class="text-white font-weight-semibold mb-3 hero-title">
-                            Today we learn and tomorrow we lead . cocognito
+                            {% lorem 10 w %}
                         </h1>
                         <p class="font-size-14">{% lorem 30 w %}</p>
 

@@ -1,5 +1,5 @@
 {% load static %}
-{% load notifications_tags %}
+{#{% load notifications_tags %}#}
 
 {# MAIN HEADER ------------------------------------------------------------------------------------------------------ #}
 <header id="page-topbar" style="background-color: orangered;">
@@ -10,10 +10,10 @@
             <div class="navbar-brand-box">
                 <a href="/" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="{% static 'images/cocognito_Logo_symbol.svg' %}" alt="" height="22">
+                        <img src="{% static 'images/nologo.png' %}" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="{% static 'images/cocognito_Logo_symbol.svg' %}" alt="" height="17">
+                        <img src="{% static 'images/nologo.png' %}" alt="" height="17">
                     </span>
                 </a>
 
@@ -53,7 +53,8 @@
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="bx bx-bell bx-tada"></i>
                     <span class="badge badge-dark badge-pill">
-                        {% live_notify_badge %}
+                        1
+{#                        % live_notify_badge %}#}
                     </span>
                 </button>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
@@ -73,7 +74,7 @@
 
                         </div>
                         <div class="p-2 border-top text-center">
-                            <button class="btn text-primary small" onclick="unread_all_notifications()">
+                            <button class="btn text-primary small">
                                 <i class="mdi mdi-arrow-right-circle mr-1"></i> Mark All as Read
                             </button>
                         </div>
@@ -138,12 +139,10 @@
                     {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser %}
                             {% include 'core/include/admin_header.html' %}
-                        {% elif request.user.is_student %}
-                            {% include 'core/include/student_header.html' %}
-                        {% elif request.user.is_parent %}
-                            {% include 'core/include/parent_header.html' %}
+                        {% elif request.user.is_staff %}
+                            {% include 'core/include/organizer_header.html' %}
                         {% else %}
-                            {% include 'core/include/moderator_header.html' %}
+                            {% include 'core/include/customer_header.html' %}
                         {% endif %}
                     {% endif %}
 

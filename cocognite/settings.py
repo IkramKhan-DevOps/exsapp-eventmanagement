@@ -6,8 +6,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 AUTH_USER_MODEL = 'accounts.User'
 ROOT_URLCONF = 'cocognite.urls'
-WSGI_APPLICATION = 'cocognite.wsgi.core'
+WSGI_APPLICATION = 'cocognite.wsgi.application'
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+SECRET_KEY = "12367812790631263092183712-37123"
 
 DEBUG = True
 SERVER = False
@@ -47,7 +48,7 @@ INSTALLED_APPS = [
 
     # USER_APPLICATIONS
     'src.accounts',
-    'src.wsite',
+    'src.website',
 
     'src.portals.customer',
     'src.portals.admins',
