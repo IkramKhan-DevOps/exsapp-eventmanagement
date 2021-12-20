@@ -1,0 +1,54 @@
+{% load static %}
+
+
+{#DASHBOARD#}
+<li class="nav-item">
+    <a class="nav-link dropdown-toggle arrow-none" href="{% url 'admin-portal:dashboard' %}">
+        <i class="bx bx-home-circle mr-2"></i>Admin Dashboard
+    </a>
+</li>
+
+
+{# Apps #}
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages" role="button"
+       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="bx bx-customize mr-2"></i>Apps
+        <div class="arrow-down"></div>
+    </a>
+    <div class="dropdown-menu" aria-labelledby="topnav-pages">
+
+        <a href="{% url 'admin-portal:quiz-create' %}" class="dropdown-item">Quiz Builder</a>
+        <a href="{% url 'admin-portal:question-create' %}" class="dropdown-item">Question
+            Builder</a>
+        <a href="{% url 'admin-portal:article-create' %}" class="dropdown-item">Article Builder</a>
+    </div>
+</li>
+
+
+{# FEATURES #}
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-components" role="button"
+       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="bx bx-collection mr-2"></i>Features
+        <div class="arrow-down"></div>
+    </a>
+    <div class="dropdown-menu" aria-labelledby="topnav-components">
+        <a href="{% url 'admin-portal:quiz' %}" class="dropdown-item">Quizzes</a>
+        <a href="{% url 'admin-portal:question' %}" class="dropdown-item">Questions</a>
+        <a href="{% url 'admin-portal:subject' %}" class="dropdown-item">Subjects</a>
+        <a href="{% url 'admin-portal:article' %}" class="dropdown-item">Articles</a>
+        <a href="{% url 'admin-portal:topic' %}" class="dropdown-item">Topics</a>
+        <a href="{% url 'admin-portal:relation-type' %}" class="dropdown-item">Relation Types</a>
+    </div>
+</li>
+
+{#DASHBOARD#}
+<li class="nav-item">
+    <a class="nav-link dropdown-toggle arrow-none" href="{% url 'admin-portal:relation' %}">
+        <i class="fa fa-child mr-2"></i>Parental Control
+    </a>
+</li>
+
+
+{# ------------------------------------------------------------------------------------------------------------------ #}

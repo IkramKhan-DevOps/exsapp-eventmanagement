@@ -1,0 +1,26 @@
+{% load static %}
+<!-- Footer start -->
+<footer class="landing-footer">
+    <div class="container">
+
+        <div class="row text-center">
+
+            <div class="col-lg-4 text-center">
+                <img src="{% static 'images/cocognito_Logo_symbol.svg' %}" class="" height="50">
+            </div>
+
+            <div class="col-lg-6 text-left">
+                <p class="mb-2">2020 - {% now 'Y' %} ©
+                    <a href="{% if site.footer_organization_url %}{{ site.footer_organization_url }}{% endif %}"
+                       target="_blank">{{ site.footer_organization_name }}</a>.
+                    Design & Develop by
+                    <strong><a class="text-white" href="https://exarth.com/" target="_blank">Exarth</a></strong>
+                </p>
+                <p>{% lorem 20 w %}</p>
+            </div>
+
+        </div>
+    </div>
+    <!-- end container -->
+</footer>
+<!-- Footer end -->

@@ -1,0 +1,56 @@
+{% extends 'wsite/base.html' %}
+{% load static %}
+
+{% block base_title %}Event{% endblock %}
+
+{% block base_content %}
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+
+    <section class="section hero-section bg-ico-hero" id="home">
+        <div class="bg-overlay" style="background-color: orangered;"></div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="text-white-50 text-center">
+                        <h1 class="text-white font-weight-semibold mb-3 hero-title"><i class="bx bx-calendar"></i></h1>
+                        <h1 class="text-white font-weight-semibold hero-title">{{ event.title }}</h1>
+                        <p class="text-white font-weight-semibold">{{ event.start_date }} - {{ event.end_date }}</p>
+                        <p class="">{{ event.description }}</p>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </section>
+
+    <section>
+        <div class="container my-5">
+            {% if event %}
+                <div class="row">
+                    <div class="col-sm-12">
+
+                            <div class="card">
+
+                                {# BODY #}
+                                <div class="card-body">
+                                    {# CONTENT #}
+                                    <div class="p-4">
+                                        {{ event.details|safe }}
+                                        <small class="font-italic">Created: {{ article.created_on }}</small>
+                                        {#                                        <img class="img-fluid my-3" src="{% static 'application/images/covid-image.jpg' %}">#}
+                                    </div>
+                                </div>
+                            </div>
+
+
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </section>
+
+
+{% endblock %}
