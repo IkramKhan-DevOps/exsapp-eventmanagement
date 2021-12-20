@@ -8,6 +8,15 @@
     </a>
 </li>
 
+{# ROOT ADMIN #}
+{% if request.user.is_superuser %}
+    <li class="nav-item">
+        <a class="nav-link" href="#">
+            <i class="bx bx-sitemap mr-2"></i>Root
+        </a>
+    </li>
+{% endif %}
+
 
 {# Apps #}
 <li class="nav-item dropdown">
