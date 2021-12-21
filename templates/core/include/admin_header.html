@@ -11,28 +11,11 @@
 {# ROOT ADMIN #}
 {% if request.user.is_superuser %}
     <li class="nav-item">
-        <a class="nav-link" href="#">
-            <i class="bx bx-sitemap mr-2"></i>Root
+        <a class="nav-link" href="/admin/">
+            <i class="bx bx-sitemap mr-2"></i>Root Access
         </a>
     </li>
 {% endif %}
-
-
-{# Apps #}
-<li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages" role="button"
-       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="bx bx-customize mr-2"></i>Apps
-        <div class="arrow-down"></div>
-    </a>
-    <div class="dropdown-menu" aria-labelledby="topnav-pages">
-
-        <a href="#" class="dropdown-item">M1</a>
-        <a href="#" class="dropdown-item">M2</a>
-        <a href="#" class="dropdown-item">M3</a>
-
-    </div>
-</li>
 
 
 {# FEATURES #}
@@ -43,12 +26,11 @@
         <div class="arrow-down"></div>
     </a>
     <div class="dropdown-menu" aria-labelledby="topnav-components">
-        <a href="#" class="dropdown-item">MS1</a>
-        <a href="#" class="dropdown-item">MS2</a>
-        <a href="#" class="dropdown-item">MS3</a>
-        <a href="#" class="dropdown-item">MS4</a>
-        <a href="#" class="dropdown-item">MS5</a>
-        <a href="#" class="dropdown-item">MS6</a>
+        <a href="#" class="dropdown-item">Uses</a>
+        <a href="#" class="dropdown-item">Events</a>
+        <a href="#" class="dropdown-item">Add On's</a>
+        <a href="#" class="dropdown-item">Event Types</a>
+        <a href="#" class="dropdown-item">Payments</a>
     </div>
 </li>
 

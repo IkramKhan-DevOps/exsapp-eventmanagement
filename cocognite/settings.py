@@ -16,11 +16,8 @@ TEST = False
 ALLOWED_HOSTS = ['*']
 SITE_ID = 1
 
-if TEST:
-    SITE_ID = 2
-
 if SERVER:
-    SITE_ID = 3
+    SITE_ID = 2
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = '/accounts/cross-auth/'
