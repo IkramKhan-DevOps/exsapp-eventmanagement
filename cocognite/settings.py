@@ -12,12 +12,14 @@ SECRET_KEY = "12367812790631263092183712-37123"
 
 DEBUG = True
 SERVER = False
-TEST = False
 ALLOWED_HOSTS = ['*']
+
 SITE_ID = 1
+GOOGLE_CALLBACK_ADDRESS = "http://127.0.0.1:8000/accounts/google/login/callback/"
 
 if SERVER:
     SITE_ID = 2
+    GOOGLE_CALLBACK_ADDRESS = "http://haris97406.pythonanywhere.com/accounts/google/login/callback/"
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = '/accounts/cross-auth/'
