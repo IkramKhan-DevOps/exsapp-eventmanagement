@@ -13,8 +13,6 @@ urlpatterns = [
     path('', include('src.website.urls', namespace='website')),
     path('a/', include('src.portals.admins.urls', namespace='admins-portal')),
     path('c/', include('src.portals.customer.urls', namespace='customer-portal')),
-
-
 ]
 
 if settings.DEBUG:
