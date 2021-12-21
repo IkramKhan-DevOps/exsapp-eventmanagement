@@ -26,7 +26,7 @@
                         <div class="card-body">
                             <p class="card-text">
                                 You are currently login as <b><a href="#">{{ request.user.username }}</a></b>,
-                                are you sure you want to sign out from cocognito?
+                                are you sure you want to sign out from application?
                             </p>
                             <form method="post" action="{% url 'account_logout' %}">
                             {% csrf_token %}

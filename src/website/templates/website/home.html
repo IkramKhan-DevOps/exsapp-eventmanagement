@@ -10,9 +10,12 @@
                 <div class="col-lg-5">
                     <div class="text-white-50">
                         <h1 class="text-white font-weight-semibold mb-3 hero-title">
-                            {% lorem 10 w %}
+                            Audio To Text Converter Web Application A2TC APP.
                         </h1>
-                        <p class="font-size-14">{% lorem 30 w %}</p>
+                        <p class="font-size-14">
+                            A modern audio to text converter application developed on Python by Group Alpha from Comsats
+                            University Islamabad of Abbotabad campus.
+                        </p>
 
                         <div class="button-items mt-4">
                             <a href="/accounts/signup/"
@@ -61,16 +64,14 @@
                     <div class="hori-timeline">
                         <div class="owl-carousel owl-theme events navs-carousel" id="timeline-carousel">
 
-                            {% for number in '12345'|make_list %}
-
                                 <div class="item event-list">
                                     <div>
                                         <a href="#">
                                             <div class="event-date">
                                                 <div class="mb-1"><i
-                                                        class="bx bx-calendar"></i> 5th December, 2021
+                                                        class="bx bx-calendar"></i> 5th October, 2021
                                                 </div>
-                                                <h5 class="mb-4">Programming</h5>
+                                                <h5 class="mb-4">10% Project</h5>
 
                                             </div>
                                             <div class="event-down-icon">
@@ -78,14 +79,83 @@
                                             </div>
 
                                             <div class="mt-3 px-3">
-                                                <p class="text-muted">{% lorem 15 w %}</p>
+                                                <p class="text-muted">
+                                                    Project Idea, Documentation and Presentations
+                                                </p>
                                             </div>
                                         </a>
 
                                     </div>
                                 </div>
+                                <div class="item event-list">
+                                    <div>
+                                        <a href="#">
+                                            <div class="event-date">
+                                                <div class="mb-1"><i
+                                                        class="bx bx-calendar"></i> 21st December, 2021
+                                                </div>
+                                                <h5 class="mb-4">30% Project</h5>
 
-                            {% endfor %}
+                                            </div>
+                                            <div class="event-down-icon">
+                                                <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                            </div>
+
+                                            <div class="mt-3 px-3">
+                                                <p class="text-muted">
+                                                    Interface, Prototype, Documentation and Presentation
+                                                </p>
+                                            </div>
+                                        </a>
+
+                                    </div>
+                                </div>
+                                <div class="item event-list">
+                                    <div>
+                                        <a href="#">
+                                            <div class="event-date">
+                                                <div class="mb-1"><i
+                                                        class="bx bx-calendar"></i> 20th March, 2021 <small>(Expected)</small>
+                                                </div>
+                                                <h5 class="mb-4">60% Project</h5>
+
+                                            </div>
+                                            <div class="event-down-icon">
+                                                <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                            </div>
+
+                                            <div class="mt-3 px-3">
+                                                <p class="text-muted">
+                                                    Converter Module, Documentation and Presentations
+                                                </p>
+                                            </div>
+                                        </a>
+
+                                    </div>
+                                </div>
+                                <div class="item event-list">
+                                    <div>
+                                        <a href="#">
+                                            <div class="event-date">
+                                                <div class="mb-1"><i
+                                                        class="bx bx-calendar"></i> 5th June, 2021 <small>(Expected)</small>
+                                                </div>
+                                                <h5 class="mb-4">100% Project</h5>
+
+                                            </div>
+                                            <div class="event-down-icon">
+                                                <i class="bx bx-down-arrow-circle h1 text-primary down-arrow-icon"></i>
+                                            </div>
+
+                                            <div class="mt-3 px-3">
+                                                <p class="text-muted">
+                                                    Fully functional Live Application
+                                                </p>
+                                            </div>
+                                        </a>
+
+                                    </div>
+                                </div>
 
                         </div>
                     </div>
@@ -98,51 +168,6 @@
     </section>
     <!-- Roadmap end -->
 
-    <!-- Blog start -->
-    <section class="section" id="news">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="text-center mb-5">
-                        <div class="small-title">Blog</div>
-                        <h4>Latest News</h4>
-                    </div>
-                </div>
-            </div>
-            <!-- end row -->
-
-            <div class="row">
-                {% for number in '1234'|make_list %}
-                    <div class="col-xl-3 col-sm-6">
-                        <div class="blog-box mb-4 mb-xl-0">
-                            <div class="position-relative">
-                                <img src="{% static 'images/no_content.png' %}" alt=""
-                                     class="rounded img-fluid mx-auto d-block">
-                                <div class="badge badge-success blog-badge font-size-11">Latest Blog</div>
-                            </div>
-
-                            <div class="mt-4 text-muted">
-                                <p class="mb-2"><i class="bx bx-calendar mr-1"></i> 5th Dec, 2021</p>
-                                <h5 class="mb-3">Blog of Cocogito</h5>
-
-                                <div class="mt-3 ">
-                                    <p class="text-muted">{% lorem 15 w %}</p>
-                                </div>
-
-                                <div>
-                                    <a href="#">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
-
-            </div>
-            <!-- end row -->
-        </div>
-        <!-- end container -->
-    </section>
-    <!-- Blog end -->
 
     <!-- Team start -->
     <section class="section bg-white" id="team">
@@ -159,43 +184,107 @@
 
             <div class="col-lg-12">
                 <div class="owl-carousel owl-theme events navs-carousel" id="team-carousel">
-                    {% for number in '1234'|make_list %}
 
-                        <div class="item">
-                            <div class="card text-center team-box">
-                                <div class="card-body">
-                                    <div>
-                                        <img src="{% static 'images/user.jpg' %}" alt="" class="rounded">
-                                    </div>
-
-                                    <div class="mt-3">
-                                        <h5>Member Name</h5>
-                                        <P class="text-muted mb-0">Member Rank</P>
-                                    </div>
+                    <div class="item">
+                        <div class="card text-center team-box">
+                            <div class="card-body">
+                                <div>
+                                    <img src="{% static 'images/user.jpg' %}" alt="" class="rounded">
                                 </div>
-                                <div class="card-footer bg-transparent border-top">
-                                    <div class="d-flex mb-0 team-social-links">
-                                        <div class="flex-fill">
-                                            <a href="#" data-toggle="tooltip" title="Facebook">
-                                                <i class="mdi mdi-facebook"></i>
-                                            </a>
-                                        </div>
-                                        <div class="flex-fill">
-                                            <a href="#" data-toggle="tooltip" title="Linkedin">
-                                                <i class="mdi mdi-linkedin"></i>
-                                            </a>
-                                        </div>
-                                        <div class="flex-fill">
-                                            <a href="#" data-toggle="tooltip" title="Google">
-                                                <i class="mdi mdi-google"></i>
-                                            </a>
-                                        </div>
+
+                                <div class="mt-3">
+                                    <h5>Fayyaz Ahmad</h5>
+                                    <P class="text-muted mb-0">FA18-BCS-104</P>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-transparent border-top">
+                                <div class="d-flex mb-0 team-social-links">
+                                    <div class="flex-fill">
+                                        <a href="#" data-toggle="tooltip" title="Facebook">
+                                            <i class="mdi mdi-facebook"></i>
+                                        </a>
+                                    </div>
+                                    <div class="flex-fill">
+                                        <a href="#" data-toggle="tooltip" title="Linkedin">
+                                            <i class="mdi mdi-linkedin"></i>
+                                        </a>
+                                    </div>
+                                    <div class="flex-fill">
+                                        <a href="#" data-toggle="tooltip" title="Google">
+                                            <i class="mdi mdi-google"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="item">
+                        <div class="card text-center team-box">
+                            <div class="card-body">
+                                <div>
+                                    <img src="{% static 'images/user.jpg' %}" alt="" class="rounded">
+                                </div>
 
-                    {% endfor %}
+                                <div class="mt-3">
+                                    <h5>Sajid Hassan</h5>
+                                    <P class="text-muted mb-0">FA18-BCS-097</P>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-transparent border-top">
+                                <div class="d-flex mb-0 team-social-links">
+                                    <div class="flex-fill">
+                                        <a href="#" data-toggle="tooltip" title="Facebook">
+                                            <i class="mdi mdi-facebook"></i>
+                                        </a>
+                                    </div>
+                                    <div class="flex-fill">
+                                        <a href="#" data-toggle="tooltip" title="Linkedin">
+                                            <i class="mdi mdi-linkedin"></i>
+                                        </a>
+                                    </div>
+                                    <div class="flex-fill">
+                                        <a href="#" data-toggle="tooltip" title="Google">
+                                            <i class="mdi mdi-google"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card text-center team-box">
+                            <div class="card-body">
+                                <div>
+                                    <img src="{% static 'images/user.jpg' %}" alt="" class="rounded">
+                                </div>
+
+                                <div class="mt-3">
+                                    <h5>Waleed Khan</h5>
+                                    <P class="text-muted mb-0">FA17-BSE-039</P>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-transparent border-top">
+                                <div class="d-flex mb-0 team-social-links">
+                                    <div class="flex-fill">
+                                        <a href="#" data-toggle="tooltip" title="Facebook">
+                                            <i class="mdi mdi-facebook"></i>
+                                        </a>
+                                    </div>
+                                    <div class="flex-fill">
+                                        <a href="#" data-toggle="tooltip" title="Linkedin">
+                                            <i class="mdi mdi-linkedin"></i>
+                                        </a>
+                                    </div>
+                                    <div class="flex-fill">
+                                        <a href="#" data-toggle="tooltip" title="Google">
+                                            <i class="mdi mdi-google"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <!-- end row -->

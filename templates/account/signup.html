@@ -12,7 +12,7 @@
 
 {% block dont_include_details %}
 <div class="home-btn d-none d-sm-block">
-    <a href="{% url 'home' %}" class="text-dark"><i class="fas fa-home h2"></i></a>
+    <a href="/" class="text-dark"><i class="fas fa-home h2"></i></a>
 </div>
 <div class="account-pages my-5 pt-sm-5">
     <div class="container">
@@ -24,20 +24,17 @@
                             <div class="col-7">
                                 <div class="text-primary p-4">
                                     <h5 class="text-primary">Free Register</h5>
-                                    <p>Get your free cocognito account now.</p>
+                                    <p>Get your free account now.</p>
                                 </div>
-                            </div>
-                            <div class="col-5 align-self-end">
-                                <img src="{% static 'core/images/profile-img.png' %}" alt="" class="img-fluid">
                             </div>
                         </div>
                     </div>
                     <div class="card-body pt-0">
                         <div>
-                            <a href="{% url 'home' %}">
+                            <a href="/">
                                 <div class="avatar-md profile-user-wid mb-4">
                                             <span class="avatar-title rounded-circle bg-light">
-                                                <img src="{% static 'images/cocognito_Logo_symbol.svg' %}" alt="" class="rounded-circle"
+                                                <img src="{% static 'images/user.png' %}" alt="" class="rounded-circle"
                                                      height="45">
                                             </span>
                                 </div>
@@ -92,7 +89,7 @@
                                 {% endif %}
 
                         <div class="mt-4 text-center">
-                                    <p class="mb-0">By registering you agree to the Cocognito <a href="#"
+                                    <p class="mb-0">By registering you agree to the Application <a href="#"
                                                                                              class="text-primary">Terms
                                         of Use</a></p>
                                 </div>
@@ -100,16 +97,6 @@
 
                     </div>
                 </div>
-                <div class="mt-5 text-center">
-                        <p>Already have an account ? <a href="{% url 'account_login' %}"
-                                                      class="font-weight-medium text-primary">
-                            Sign in </a></p>
-                        <p>© 2020 - {% now 'Y' %}
-                            <a href="{% url 'home' %}" class="text-secondary" target="_blank"> <strong>cocognito </strong></a>.
-                    Design & Develop by
-                    <strong><a class="text-primary" href="mailto:umair_mnz105@yahoo.com" target="_blank">Chameleon</a></strong> &
-                    <strong><a class="text-primary" href="https://exarth.com/" target="_blank">Exarth</a></strong></p>
-                    </div>
 
             </div>
         </div>
