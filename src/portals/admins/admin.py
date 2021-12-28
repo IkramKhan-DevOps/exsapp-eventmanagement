@@ -2,7 +2,8 @@ from django.contrib import admin
 
 from .models import (
     AddOn, Venue, EventType, Event,
-    Payment)
+    Payment
+)
 
 
 class AddOnAdmin(admin.ModelAdmin):
