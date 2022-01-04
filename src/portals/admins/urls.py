@@ -5,11 +5,11 @@ from .views import (
     EventTypeListView, EventTypeCreateView, EventTypeUpdateView, EventTypeDeleteView,
     VenueListView, VenueCreateView, VenueUpdateView, VenueDeleteView,
     EventListView, EventDetailView, EventUpdateView, EventDeleteView,
-    PaymentVerificationEasyPaisa)
+    PaymentVerificationEasyPaisa, DashboardView)
 
 app_name = "admin-portal"
 urlpatterns = [
-    path('dashboard/', TemplateView.as_view(template_name='admins/dashboard.html'), name='dashboard'),
+    path('dashboard/', DashboardView.as_view(), name='dashboard'),
 
     path('addon/', AddonListView.as_view(), name='addon-list-view'),
     path('addon/add/', AddonCreateView.as_view(), name='addon-create-view'),

@@ -4,10 +4,25 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views import View
-from django.views.generic import ListView, DetailView, UpdateView, CreateView, DeleteView
+from django.views.generic import ListView, DetailView, UpdateView, CreateView, DeleteView, TemplateView
+
+from src.accounts.models import User
 from .models import (
     Event, EventType, Venue, AddOn
 )
+
+
+class DashboardView(TemplateView):
+    template_name = 'admins/dashboard.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(DashboardView, self).get_context_data(**kwargs)
+        context['events'] = Event.objects.count()
+        context['users'] = User.objects.filter().count()
+        context['admins'] = User.objects.filter(is_staff=True, is_active=True).count()
+        context['customer'] = User.objects.filter(is_customer=True, is_active=True).count()
+        return context
+
 
 """ ADD ON """
 
