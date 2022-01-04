@@ -13,6 +13,8 @@
 
 {% block content %}
 
+
+
     <div class="card">
         <div class="card-body">
             {% if event_list %}
@@ -63,8 +65,8 @@
                                     {% endif %}
                                 </td>
                                 <td>
-                                    <a href="{% url 'admin-portal:event-detail-view' row.pk %}">
-                                        <i class="fa fa-eye"></i></a>
+                                    {#                                    <a href="{% url 'admin-portal:event-detail-view' row.pk %}">#}
+                                    {#                                        <i class="fa fa-eye"></i></a>#}
                                     <a href="{% url 'admin-portal:event-update-view' row.pk %}">
                                         <i class="fa fa-edit"></i></a>
                                     <a class="text-danger"
@@ -81,12 +83,13 @@
                 </div>
             {% else %}
                 <p>
-                <h5 class="card-title text-danger">No Event Types added by administration.</h5>
+                <h5 class="card-title text-danger">No event orders placed yet.</h5>
                 </p>
 
             {% endif %}
         </div>
     </div>
+
 
 {% endblock %}
 

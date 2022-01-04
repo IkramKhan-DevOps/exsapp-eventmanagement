@@ -94,7 +94,7 @@ class EventDetailView(DetailView):
 
 class EventUpdateView(UpdateView):
     model = Event
-    fields = ['name', 'user', 'event_type', 'venue', 'is_paid']
+    fields = '__all__'
     success_url = reverse_lazy('admin-portal:event-list-view')
 
 

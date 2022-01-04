@@ -25,6 +25,7 @@
         <div class="arrow-down"></div>
     </a>
     <div class="dropdown-menu" aria-labelledby="topnav-components">
+        <a href="{% url 'admin-portal:event-list-view' %}" class="dropdown-item">Events</a>
         <a href="{% url 'admin-portal:venue-list-view' %}" class="dropdown-item">Venues</a>
         <a href="{% url 'admin-portal:addon-list-view' %}" class="dropdown-item">Add On's</a>
         <a href="{% url 'admin-portal:eventtype-list-view' %}" class="dropdown-item">Event Types</a>
