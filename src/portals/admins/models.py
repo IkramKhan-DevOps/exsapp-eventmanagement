@@ -56,7 +56,13 @@ class Event(models.Model):
     tax_charge = models.FloatField(default=100)
     total_charge = models.FloatField(default=0)
 
+    transaction_id = models.CharField(
+        max_length=1000, null=False, blank=False,
+        help_text="Enter transaction id here, transaction id will be provided by your service provider "
+                  "i.e EasyPaisa provide you through sms over a successful transaction", unique=True
+    )
     is_paid = models.BooleanField(default=False)
+
     is_active = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)
     event_date = models.DateTimeField()
@@ -74,15 +80,3 @@ class Event(models.Model):
         #         _total_charge += add_on.price
         # self.total_charge = _total_charge
         super(Event, self).save(*args, **kwargs)
-
-
-class Payment(models.Model):
-    event = models.ForeignKey('Event', on_delete=models.CASCADE)
-    tx_id = models.CharField(max_length=1000)
-    is_verified = models.BooleanField(default=False)
-
-    class Meta:
-        ordering = ['-id']
-
-    def __str__(self):
-        return self.event

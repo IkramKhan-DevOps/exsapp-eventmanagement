@@ -8,14 +8,13 @@
     </a>
 </li>
 
+
 {# ROOT ADMIN #}
-{% if request.user.is_superuser %}
-    <li class="nav-item">
-        <a class="nav-link" href="/admin/">
-            <i class="bx bx-sitemap mr-2"></i>Root Access
-        </a>
-    </li>
-{% endif %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'admin-portal:payment-verification-easypaisa' %}">
+        <i class="bx bx-dollar-circle mr-2"></i>Transactions
+    </a>
+</li>
 
 
 {# FEATURES #}
@@ -31,6 +30,16 @@
         <a href="{% url 'admin-portal:eventtype-list-view' %}" class="dropdown-item">Event Types</a>
     </div>
 </li>
+
+
+{# ROOT ADMIN #}
+{% if request.user.is_superuser %}
+    <li class="nav-item">
+        <a class="nav-link" href="/admin/">
+            <i class="bx bx-sitemap mr-2"></i>Root Access
+        </a>
+    </li>
+{% endif %}
 
 
 {# ------------------------------------------------------------------------------------------------------------------ #}

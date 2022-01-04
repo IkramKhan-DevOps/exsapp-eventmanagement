@@ -4,7 +4,8 @@ from .views import (
     AddonListView, AddonCreateView, AddonUpdateView, AddonDeleteView,
     EventTypeListView, EventTypeCreateView, EventTypeUpdateView, EventTypeDeleteView,
     VenueListView, VenueCreateView, VenueUpdateView, VenueDeleteView,
-)
+    EventListView, EventDetailView, EventUpdateView, EventDeleteView,
+    PaymentVerificationEasyPaisa)
 
 app_name = "admin-portal"
 urlpatterns = [
@@ -24,4 +25,16 @@ urlpatterns = [
     path('venue/add/', VenueCreateView.as_view(), name='venue-create-view'),
     path('venue/<int:pk>/change/', VenueUpdateView.as_view(), name='venue-update-view'),
     path('venue/<int:pk>/delete/', VenueDeleteView.as_view(), name='venue-delete-view'),
+
+    path('event/', EventListView.as_view(), name='event-list-view'),
+    path('event/<int:pk>/', EventDetailView.as_view(), name='event-detail-view'),
+    path('event/<int:pk>/change/', EventUpdateView.as_view(), name='event-update-view'),
+    path('event/<int:pk>/delete/', EventDeleteView.as_view(), name='event-delete-view'),
+
+    path(
+        'payment/verification/easypaisa/',
+        PaymentVerificationEasyPaisa.as_view(),
+        name='payment-verification-easypaisa'
+    )
+
 ]
