@@ -8,21 +8,21 @@ class DashboardView(TemplateView):
     template_name = 'customer/dashboard.html'
 
 
-class EventsList(ListView):
+class EventsListView(ListView):
     template_name = 'customer/event_list.html'
 
     def get_queryset(self):
         return Event.objects.filter(user=self.request.user)
 
 
-class EventDetail(DetailView):
+class EventDetailView(DetailView):
     template_name = 'customer/event_detail.html'
 
     def get_object(self, queryset=None):
         return get_object_or_404(Event.objects.filter(user=self.request.user), pk=self.kwargs['pk'])
 
 
-class EventDelete(DeleteView):
+class EventDeleteView(DeleteView):
     template_name = 'customer/event_confirm_delete.html'
 
     def get_object(self, queryset=None):
