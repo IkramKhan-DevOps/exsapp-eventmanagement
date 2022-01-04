@@ -10,8 +10,6 @@ Following are the features used in this application
 6. Moderator Portal
 7. All-Auth (authentication)
 8. Easypaisa Custom Implementation 
-
-## Next Update
 1. Customer Portal
 2. Changes from 60%
 
