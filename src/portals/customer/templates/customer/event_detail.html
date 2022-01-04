@@ -1,0 +1,109 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block base_title %} {{ object }} {% endblock %}
+
+{% block content %}
+
+    <div class="row">
+
+        {# LEFT SIDE #}
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-white border-bottom">
+                    <p class="mb-0 card-title">Event Information</p>
+                </div>
+                <div class="card-body">
+
+                    <div class="text-center">
+                        <p class="h3 mb-0">{{ object.name }}</p>
+                        <p class="text-primary">
+                            {% for add_on in object.add_ons.all %}
+                                <b>{{ add_on }}</b> -
+                            {% endfor %}
+                        </p>
+                    </div>
+
+                    <div class="row justify-content-center text-center my-4">
+
+                        <div class="col">
+                            <h1>
+                                <i class="fa fa-sort"></i>
+                            </h1>
+                            <p class="mb-0">Event Type</p>
+                            <h5 class="mb-0">{{ object.event_type }}</h5>
+                        </div>
+
+                        <div class="col">
+                            <h1>
+                                <i class="fa fa-hotel"></i>
+                            </h1>
+                            <p class="mb-0">Venue</p>
+                            <h5 class="mb-0">{{ object.venue }}</h5>
+                        </div>
+
+                        <div class="col">
+                            <h1>
+                                <i class="fa fa-users"></i>
+                            </h1>
+                            <p class="mb-0">Guests</p>
+                            <h5 class="mb-0">{{ object.no_of_persons }}</h5>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        {# RIGHT SIDE #}
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header bg-white border-bottom">
+                    <p class="mb-0 card-title">Payment and Budget</p>
+                </div>
+                <div class="card-body">
+
+                    {% if object.is_paid %}
+                        <p class="bg-success text-white p-2"><i class="fa fa-check-circle"></i>
+                            Payment is verified by administration
+                        </p>
+                    {% else %}
+                        <p class="bg-danger text-white p-2"><i class="fa fa-times-circle"></i>
+                            Payment is not verified by administration
+                        </p>
+                    {% endif %}
+
+                     <div class="table-responsive">
+                         <table class="table table-borderless table-sm">
+                             <tr>
+                                 <th>Event Charge</th>
+                                 <td>{{ object.event_charge }}</td>
+                             </tr>
+                             <tr>
+                                 <th>Venue Charge</th>
+                                 <td>{{ object.venue_charge }}</td>
+                             </tr>
+                             <tr>
+                                 <th>Tax Charge</th>
+                                 <td>{{ object.tax_charge }}</td>
+                             </tr>
+                             <tr>
+                                 <th>Total Charge</th>
+                                 <td>{{ object.total_charge }}</td>
+                             </tr>
+                         </table>
+                     </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+    <div class="col-12">
+        <p><b><a href="{% url 'customer-portal:event-list' %}"> -- Back to My Booking</a></b></p>
+    </div>
+    </div>
+
+{% endblock %}

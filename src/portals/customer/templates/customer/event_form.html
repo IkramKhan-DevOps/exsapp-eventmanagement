@@ -1,0 +1,85 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block base_title %}New Event{% endblock %}
+
+{% block page_heading %}
+    New Event
+{% endblock %}
+
+{% block base_links %}
+    <!-- XDSoft DateTimePicker -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css"
+          integrity="sha256-DOS9W6NR+NFe1fUhEE0PGKY/fubbUCnOfTje2JMDw3Y=" crossorigin="anonymous"/>
+{% endblock %}
+
+{% block content %}
+    <div class="row justify-content-center">
+
+        <div class="card col-6">
+            <div class="card-header bg-danger">
+                <h3 class="text-light"><i class="fa fa-exclamation-triangle"></i> NOTICE</h3>
+            </div>
+
+            <div class="card-body">
+                <p class="">Please follow the guide lines below for successful booking and safe payment.</p>
+                <ol>
+                    <li>Enter event <b>Name</b> of your choice</li>
+                    <li>Select <b>Event Type</b></li>
+                    <li>Select <b>Venue</b></li>
+                    <li>Select <b>Add-Ons</b> according to your requirements, your can select multiple as well</li>
+                    <li>No of expected <b>Guests</b></li>
+                    <li>Event <b>Date</b> and <b>Time</b></li>
+                    <li>After filling form - pay amount of
+                        <b class="text-danger"><i class="fa fa-dollar"></i> Rs 1000</b>
+                        with easypaise to account: <b class="text-primary">+92 340 00 00 000</b>
+                    </li>
+                    <li>On successful transaction, copy the <b class="text-primary">transaction id</b>
+                        provided by easypaisa (SMS)
+                    </li>
+                    <li>Paste this id in transaction_id field (Last One) and submit your form.</li>
+                    <li>Wait for 24 hours, it will be updated, if in case any issues please contact</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+
+        <div class="card col-6">
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.media }}
+                    {{ form| crispy }}
+                    <button class="btn btn-success" type="submit"><i class="fa fa-check"></i> Submit</button>
+                </form>
+                <div class="mt-3">
+                    <a href="{% url 'customer-portal:event-list' %}"><i class="fa fa-arrow-left"></i> Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block base_internal_scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"
+            integrity="sha256-FEqEelWI3WouFOo2VWP/uJfs1y8KJ++FLh2Lbqc8SJk=" crossorigin="anonymous"></script>
+
+{% endblock %}
+
+
+{% block base_external_scripts %}
+    <script>
+        $(document).ready(function () {
+
+            $('#id_event_date').datetimepicker({
+                format: 'Y-m-d H:i:s',
+            });
+
+        });
+    </script>
+{% endblock %}
