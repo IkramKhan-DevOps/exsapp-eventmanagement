@@ -31,6 +31,8 @@ urlpatterns = [
     path('event/<int:pk>/change/', EventUpdateView.as_view(), name='event-update-view'),
     path('event/<int:pk>/delete/', EventDeleteView.as_view(), name='event-delete-view'),
 
+
+
     path(
         'payment/verification/easypaisa/',
         PaymentVerificationEasyPaisa.as_view(),

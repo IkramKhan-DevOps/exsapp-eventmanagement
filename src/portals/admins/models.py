@@ -61,6 +61,12 @@ class Event(models.Model):
         help_text="Enter transaction id here, transaction id will be provided by your service provider "
                   "i.e EasyPaisa provide you through sms over a successful transaction", unique=True
     )
+    single_split = models.BooleanField(default=False)
+    double_split = models.BooleanField(default=False)
+    triple_split = models.BooleanField(default=False)
+    red_carpet = models.BooleanField(default=False)
+    music = models.BooleanField(default=False)
+
     is_paid = models.BooleanField(default=False)
 
     is_active = models.BooleanField(default=True)
@@ -80,3 +86,12 @@ class Event(models.Model):
         #         _total_charge += add_on.price
         # self.total_charge = _total_charge
         super(Event, self).save(*args, **kwargs)
+
+
+class Video(models.Model):
+    caption = models.CharField(max_length = 100)
+    description = models.TextField()
+    video = models.FileField(upload_to = 'videos/', null=True)
+
+    def __str__(self):
+        return f'{self.caption}'
