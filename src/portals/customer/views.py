@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, ListView, DetailView, DeleteView, CreateView
-from src.portals.admins.models import Event
+from src.portals.admins.models import Event, Video
 from src.portals.customer.bll import calculate_price
 
 
@@ -44,7 +44,8 @@ class EventCreateView(CreateView):
     model = Event
     fields = [
         'name', 'event_type', 'venue', 'add_ons', 'no_of_persons',
-        'event_date', 'transaction_id'
+        'single_split', 'double_split', 'triple_split',
+        'red_carpet',  'music', 'event_date', 'transaction_id'
     ]
     success_url = reverse_lazy("customer-portal:event-list")
 
@@ -53,3 +54,12 @@ class EventCreateView(CreateView):
         calculate_price(form, self.request.user)
         form.instance.user = self.request.user
         return super(EventCreateView, self).form_valid(form)
+
+
+"""Videos and other video details"""
+
+
+class VideoView(ListView):
+    model = Video
+    template_name = 'customer/video_list.html'
+

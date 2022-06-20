@@ -8,7 +8,7 @@ from django.views.generic import ListView, DetailView, UpdateView, CreateView, D
 
 from src.accounts.models import User
 from .models import (
-    Event, EventType, Venue, AddOn
+    Event, EventType, Venue, AddOn, Video
 )
 
 
@@ -115,6 +115,15 @@ class EventUpdateView(UpdateView):
 
 class EventDeleteView(DeleteView):
     model = Event
+    success_url = reverse_lazy('admin-portal:event-list-view')
+
+
+    
+"""Videos and other video details"""
+
+
+class VideoView(DetailView):
+    model = Video
     success_url = reverse_lazy('admin-portal:event-list-view')
 
 

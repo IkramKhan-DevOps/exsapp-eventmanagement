@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block base_title %} My Events {% endblock %}
+{% block page_heading %}
+   Demo Videos
+{% endblock %}
+
+
+
+{% block content %}
+<div class="row">
+    {% for item in video_list %}
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-text">
+                    <h3 class="text-center mt-2 mb-2">{{item.caption}}</h3>
+                    <video class="embed-responsive embed-responsive-16by9" controls="controls">
+                    <source  src="{{item.video.url}}"/>
+                </video>
+                <p class="text-center mt-2 mb-2">{{item.description}}</p>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

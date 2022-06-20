@@ -12,86 +12,104 @@
 {% endblock %}
 
 {% block content %}
-
-    <div class="mb-2">
-        <a href="{% url 'customer-portal:event-add' %}" class="btn btn-primary">
-            <i class="fa fa-plus"></i> Create Event
-        </a>
-    </div>
-
-    <div class="card">
-        <div class="card-body">
-            {% if event_list %}
-                <div class="table-responsive">
-                    <table class="table table-hover table-striped">
-                        <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>User</th>
-                            <th>Type</th>
-                            <th>Venue</th>
-                            <th>Add On</th>
-                            <th>Tx ID</th>
-                            <th>Created On</th>
-                            <th>Payment</th>
-                            <th></th>
-                        </tr>
-                        </thead>
-                        <tbody class="">
-
-                        {% for row in event_list %}
-                            <tr>
-                                <td>{{ row.name }}</td>
-                                <td>{{ row.user }}</td>
-                                <td>{{ row.event_type }}</td>
-                                <td>{{ row.venue }}</td>
-                                <td>
-                                    {% for add_on in row.add_ons.all %}
-                                        <span class="badge badge-pill badge-soft-primary font-size-12">{{ add_on.name }}</span>
-                                    {% endfor %}
-
-                                </td>
-                                <td>{{ row.transaction_id }}</td>
-                                <td>{{ row.created_on }}</td>
-                                <td>
-                                    {% if row.is_paid %}
-                                        <b class="text-success">
-                                            <a href="#">
-                                                <i class="fa fa-check-circle"></i> Verified
-                                            </a>
-                                        </b>
-                                    {% else %}
-                                        <b>
-                                            <a href="#" class="text-danger">
-                                                <i class="fa fa-times-circle"></i> Not Verified
-                                            </a>
-                                        </b>
-                                    {% endif %}
-                                </td>
-                                <td>
-                                    <a href="{% url 'customer-portal:event-detail' row.pk %}">
-                                        <i class="fa fa-eye"></i></a>
-                                    <a class="text-danger"
-                                       href="{% url 'customer-portal:event-delete' row.pk %}">
-                                        <i class="fa fa-trash"></i></a>
-                                </td>
-                            </tr>
-
-                        {% endfor %}
-
-
-                        </tbody>
-                    </table>
-                </div>
-            {% else %}
-                <p>
-                <h5 class="card-title text-danger">No event orders placed yet.</h5>
-                </p>
-
-            {% endif %}
+    <div class="row">
+        <div class="col-6">
+            <div class="mb-2">
+                <a href="{% url 'customer-portal:event-add' %}" class="btn btn-primary">
+                    <i class="fa fa-plus"></i> Create Event
+                </a>
+            </div>
+            </div>
+            <div class=" col-6 mb-2 text-right">
+                
+                <a href="{% url 'customer-portal:view-video' %}" class="btn btn-primary">
+                    
+                     View Demo Videos
+                </a>
+            </div>
         </div>
-    </div>
 
+<div>
+    
+</div>
+ <div class="row">
+     <div class="col-12">
+        <div class="card ">
+            <div class="card-body">
+                {% if event_list %}
+                    <div class="table-responsive">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>User</th>
+                                <th>Type</th>
+                                <th>Venue</th>
+                                <th>Add On</th>
+                                <th>Music</th>
+                                <th>Tx ID</th>
+                                <th>Created On</th>
+                                <th>Payment</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody class="">
+    
+                            {% for row in event_list %}
+                                <tr>
+                                    <td>{{ row.name }}</td>
+                                    <td>{{ row.user }}</td>
+                                    <td>{{ row.event_type }}</td>
+                                    <td>{{ row.venue }}</td>
+                                    <td>
+                                        {% for add_on in row.add_ons.all %}
+                                            <span class="badge badge-pill badge-soft-primary font-size-12">{{ add_on.name }}</span>
+                                        {% endfor %}
+    
+                                    </td>
+                                    <td>{{ row.transaction_id }}</td>
+                                    <td>{{ row.created_on }}</td>
+                                    <td>
+                                        {% if row.is_paid %}
+                                            <b class="text-success">
+                                                <a href="#">
+                                                    <i class="fa fa-check-circle"></i> Verified
+                                                </a>
+                                            </b>
+                                        {% else %}
+                                            <b>
+                                                <a href="#" class="text-danger">
+                                                    <i class="fa fa-times-circle"></i> Not Verified
+                                                </a>
+                                            </b>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        <a href="{% url 'customer-portal:event-detail' row.pk %}">
+                                            <i class="fa fa-eye"></i></a>
+                                        <a class="text-danger"
+                                           href="{% url 'customer-portal:event-delete' row.pk %}">
+                                            <i class="fa fa-trash"></i></a>
+                                    </td>
+                                </tr>
+    
+                            {% endfor %}
+    
+    
+                            </tbody>
+                        </table>
+                    </div>
+                {% else %}
+                    <p>
+                    <h5 class="card-title text-danger">No event orders placed yet.</h5>
+                    </p>
+    
+                {% endif %}
+            </div>
+        </div>
+    
+     </div>
+ </div>
 
 {% endblock %}
 

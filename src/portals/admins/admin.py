@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from .models import (
-    AddOn, Venue, EventType, Event,
+    AddOn, Venue, EventType, Event, Video
 
 )
 
@@ -31,7 +31,14 @@ class EventAdmin(admin.ModelAdmin):
     ]
 
 
+class VideoAdmin(admin.ModelAdmin):
+    list_display = [
+         'caption','description','video' 
+    ]
+
+
 admin.site.register(AddOn, AddOnAdmin)
 admin.site.register(Venue, VenueAdmin)
 admin.site.register(Event, EventAdmin)
 admin.site.register(EventType, EventTypeAdmin)
+admin.site.register(Video,VideoAdmin)
